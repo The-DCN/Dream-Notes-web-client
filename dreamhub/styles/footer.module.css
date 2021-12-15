@@ -1,0 +1,15 @@
+.footer_container {
+    min-height: 5vh;
+    display: flex;
+    padding:2rem;
+    justify-content: center;
+}
+
+
+.footer_text {
+    font-size: 1.4rem;
+}
+
+.footer_container div:not(:last-child) {
+    margin-right: 6rem;
+}

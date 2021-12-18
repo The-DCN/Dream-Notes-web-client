@@ -1,17 +1,20 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ReactQueryCacheProvider, QueryCache } from 'react-query';
+import { QueryCache, QueryClient, QueryClientProvider } from 'react-query';
 import {Hydrate} from 'react-query/hydration'
+import {useState} from 'react';
 
-const queryCache = new QueryCache;
 
 function MyApp({ Component, pageProps }: AppProps) {
  
- return (<ReactQueryCacheProvider>
-    <Hydrate>
-    <Component {...pageProps} />
-  </Hydrate>
-  </ReactQueryCacheProvider>
+  const [queryClient] =  useState(() => new QueryClient());
+
+ return (
+   <QueryClientProvider client={queryClient}>
+    <Hydrate state={pageProps.dehydratedState}>
+      <Component {...pageProps} />
+     </Hydrate>
+     </QueryClientProvider>
  )
 }
 

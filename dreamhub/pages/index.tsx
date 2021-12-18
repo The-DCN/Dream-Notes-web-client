@@ -1,13 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/pages/Home.module.css";
 import Link from "next/link";
 import SleepAnalysis from "../public/sleepanalysis.svg";
-import Book from "../public/book.svg";
 import Dreamer from "../public/dreamer.svg";
 import CountingStars from "../public/counting_stars.svg";
 import Footer from "../components/footer"
+
 const Home: NextPage = () => {
   return (
 
@@ -64,11 +64,9 @@ const Home: NextPage = () => {
             </div>
           </section>
         </main>
-        <footer>
-          <Footer></Footer>
-        </footer>
+          <Footer/>
       </section>
-
+      
     </div>
   );
 };

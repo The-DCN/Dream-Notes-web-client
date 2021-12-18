@@ -32,7 +32,6 @@
 
 .hero_container {
   min-height: 100vh;
-  background-color: #2F3542;
 }
 
 
@@ -52,6 +51,7 @@
 }
 
 .landing_subsection {
+  width:cover;
   margin-top: 8rem;
   min-height: 60vh;
   padding:4rem;

@@ -7,7 +7,14 @@
     align-items: center;
 }
 
-.login_form_box {
-    background-color: rgb(9, 44, 44);
-    height: 50rem;
+.login_heading {
+    font-size: 3rem;
+}
+
+.login_heading_box {
+    margin-bottom: -1rem;
+}
+
+.login_heading_box:last-of-type {
+    margin-bottom: 4rem;
 }

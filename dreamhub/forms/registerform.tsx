@@ -1,5 +1,7 @@
 import {useForm, SubmitHandler} from "react-hook-form";
 import styles from "../styles/forms/RegisterForm.module.css";
+import {passwordErrorMessages} from "../errors/password";
+import {usernameErrorMessages} from "../errors/username";
 
 interface RegisterInputs {
     firstName: string;
@@ -9,7 +11,7 @@ interface RegisterInputs {
     username: string;
     password: string;
     confirmPassword: string;
-}
+};
 
 const RegisterForm = () => {
 
@@ -29,7 +31,7 @@ const RegisterForm = () => {
             <div className={styles.form_item}>
 
                 <div className={styles.form_label}>
-                    <label >First Name</label>
+                    <label>First Name</label>
                 </div>
                 
                 <div>
@@ -73,13 +75,14 @@ const RegisterForm = () => {
                 
                 <div className={styles.form_item}>
                     <div  className={styles.form_label}><label className={styles.form_label}>Username</label></div>
-                    <div><input autoComplete="off" className={styles.form_input_lg} type="text" {...register("username", {required:true})} /></div>
+                    <div><input autoComplete="off" className={styles.form_input_lg} 
+                    type="text" {...register("username", {required:true})} /></div>
                 </div>
                 
                 <div className={styles.form_item}>
                     <div className={styles.form_label}><label className={styles.form_label}>Password</label></div>
                     <div>
-                        <input type="password"{...register("password", {required:true})}/>
+                        <input type="password"{...register("password", {required:true, minLength:8})}/>
                     </div>
                 </div>
                 
@@ -89,7 +92,8 @@ const RegisterForm = () => {
                 </div>
                 
                 <div> 
-                    <input className={styles.submit_button} type="submit" value="Register"/>
+                    <input className={styles.submit_button} 
+                    type="submit" value="Register"/>
                 </div>
 
                 </div>

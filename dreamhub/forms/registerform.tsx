@@ -95,7 +95,7 @@ const RegisterForm = () => {
                     <input className={styles.submit_button} 
                     type="submit" value="Register"/>
                 </div>
-
+                
                 </div>
             </form> 
         </div>
